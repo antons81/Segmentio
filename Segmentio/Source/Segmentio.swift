@@ -150,12 +150,12 @@ open class Segmentio: UIView {
             backgroundColor = options.backgroundColor
         }
         
-        if segmentioOptions.states.selectedState.backgroundColor != .clear {
+        if segmentioOptions.states?.selectedState.backgroundColor != .clear {
             selectedLayer = CAShapeLayer()
             if let selectedLayer = selectedLayer, let sublayer = segmentioCollectionView?.layer {
                 setupShapeLayer(
                     shapeLayer: selectedLayer,
-                    backgroundColor: segmentioOptions.states.selectedState.backgroundColor,
+                    backgroundColor: (segmentioOptions.states?.selectedState.backgroundColor)!,
                     height: bounds.height,
                     sublayer: sublayer
                 )

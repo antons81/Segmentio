@@ -172,13 +172,13 @@ public struct SegmentioOptions {
     var imageContentMode: UIViewContentMode
     var labelTextAlignment: NSTextAlignment
     var labelTextNumberOfLines: Int
-    var states: SegmentioStates
+    var states: SegmentioStates?
     var animationDuration: CFTimeInterval
     
     public init() {
         self.backgroundColor = .lightGray
-        self.maxVisibleItems = 4
-        self.scrollEnabled = true
+        self.maxVisibleItems = 2
+        self.scrollEnabled = false
         
         self.horizontalSeparatorOptions = SegmentioHorizontalSeparatorOptions()
         self.verticalSeparatorOptions = SegmentioVerticalSeparatorOptions()
