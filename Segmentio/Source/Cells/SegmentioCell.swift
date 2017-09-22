@@ -11,7 +11,7 @@ import UIKit
 class SegmentioCell: UICollectionViewCell {
     
     let padding: CGFloat = 8
-    let segmentTitleLabelHeight: CGFloat = 22
+    let segmentTitleLabelHeight: CGFloat = 40
     
     var verticalSeparatorView: UIView?
     var segmentTitleLabel: UILabel?
@@ -37,19 +37,19 @@ class SegmentioCell: UICollectionViewCell {
             if newValue != isHighlighted {
                 super.isHighlighted = newValue
                 
-                let highlightedState = options.states.highlightedState
-                let defaultState = options.states.defaultState
-                let selectedState = options.states.selectedState
+                let highlightedState = options.states?.highlightedState
+                let defaultState = options.states?.defaultState
+                let selectedState = options.states?.selectedState
                 
                 if style.isWithText() {
-                    let highlightedTitleTextColor = cellSelected ? selectedState.titleTextColor : defaultState.titleTextColor
-                    let highlightedTitleFont = cellSelected ? selectedState.titleFont : defaultState.titleFont
+                    let highlightedTitleTextColor = cellSelected ? selectedState?.titleTextColor : defaultState?.titleTextColor
+                    let highlightedTitleFont = cellSelected ? selectedState?.titleFont : defaultState?.titleFont
                     
-                    segmentTitleLabel?.textColor = isHighlighted ? highlightedState.titleTextColor : highlightedTitleTextColor
-                    segmentTitleLabel?.font = isHighlighted ? highlightedState.titleFont : highlightedTitleFont
+                    segmentTitleLabel?.textColor = isHighlighted ? highlightedState?.titleTextColor : highlightedTitleTextColor
+                    segmentTitleLabel?.font = isHighlighted ? highlightedState?.titleFont : highlightedTitleFont
                 }
                 
-                backgroundColor = isHighlighted ? highlightedState.backgroundColor : .clear
+                backgroundColor = isHighlighted ? highlightedState?.backgroundColor : .clear
             }
         }
     }
@@ -133,12 +133,12 @@ class SegmentioCell: UICollectionViewCell {
     func configure(selected: Bool, selectedImage: UIImage? = nil, image: UIImage? = nil) {
         cellSelected = selected
         
-        let selectedState = options.states.selectedState
-        let defaultState = options.states.defaultState
+        let selectedState = options.states?.selectedState
+        let defaultState = options.states?.defaultState
         
         if style.isWithText() {
-            segmentTitleLabel?.textColor = selected ? selectedState.titleTextColor : defaultState.titleTextColor
-            segmentTitleLabel?.font = selected ? selectedState.titleFont : defaultState.titleFont
+            segmentTitleLabel?.textColor = selected ? selectedState?.titleTextColor : defaultState?.titleTextColor
+            segmentTitleLabel?.font = selected ? selectedState?.titleFont : defaultState?.titleFont
         }
                 
         if (style != .onlyLabel) {
@@ -285,9 +285,9 @@ class SegmentioCell: UICollectionViewCell {
         if style.isWithText() {
             segmentTitleLabel?.textAlignment = options.labelTextAlignment
             segmentTitleLabel?.numberOfLines = options.labelTextNumberOfLines
-            let defaultState = options.states.defaultState
-            segmentTitleLabel?.textColor = defaultState.titleTextColor
-            segmentTitleLabel?.font = defaultState.titleFont
+            let defaultState = options.states?.defaultState
+            segmentTitleLabel?.textColor = defaultState?.titleTextColor
+            segmentTitleLabel?.font = defaultState?.titleFont
             segmentTitleLabel?.attributedText = content.attributedTittle
         }
     }
