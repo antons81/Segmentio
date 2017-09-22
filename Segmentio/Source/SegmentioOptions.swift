@@ -13,6 +13,7 @@ import UIKit
 public struct SegmentioItem {
     
     public var title: String?
+    public var attributedTittle: NSAttributedString?
     public var image: UIImage?
     public var selectedImage: UIImage?
     public var badgeCount: Int?
@@ -20,6 +21,12 @@ public struct SegmentioItem {
 
     public init(title: String?, image: UIImage?, selectedImage: UIImage? = nil) {
         self.title = title
+        self.image = image
+        self.selectedImage = selectedImage ?? image
+    }
+    
+    public init(attrTittle: NSAttributedString?, image: UIImage?, selectedImage: UIImage? = nil) {
+        self.attributedTittle = attrTittle
         self.image = image
         self.selectedImage = selectedImage ?? image
     }
