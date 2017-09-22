@@ -101,13 +101,13 @@ class SegmentioCell: UICollectionViewCell {
         switch style {
         case .onlyLabel:
             badgePresenter.removeBadgeFromContainerView(containerView!)
-            segmentTitleLabel?.text = nil
+            segmentTitleLabel?.attributedText = nil
         case .onlyImage:
             badgePresenter.removeBadgeFromContainerView(imageContainerView!)
             segmentImageView?.image = nil
         default:
             badgePresenter.removeBadgeFromContainerView(containerView!)
-            segmentTitleLabel?.text = nil
+            segmentTitleLabel?.attributedText = nil
             segmentImageView?.image = nil
         }
     }
@@ -288,7 +288,7 @@ class SegmentioCell: UICollectionViewCell {
             let defaultState = options.states.defaultState
             segmentTitleLabel?.textColor = defaultState.titleTextColor
             segmentTitleLabel?.font = defaultState.titleFont
-            segmentTitleLabel?.text = content.title
+            segmentTitleLabel?.attributedText = content.attributedTittle
         }
     }
     
