@@ -45,7 +45,7 @@ class SegmentioCellWithImageOverLabel: SegmentioCell {
         NSLayoutConstraint.activate(segmentTitleLabelHorizontConstraint)
         
         let contentViewVerticalConstraints = NSLayoutConstraint.constraints(
-            withVisualFormat: "V:[imageContainerView]-[containerView(labelHeight)]",
+            withVisualFormat: "V:[imageContainerView]-[containerView(labelHeight@999)]",
             options: [],
             metrics: metrics,
             views: views)

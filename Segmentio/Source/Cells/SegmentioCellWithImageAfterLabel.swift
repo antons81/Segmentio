@@ -28,7 +28,7 @@ final class SegmentioCellWithImageAfterLabel: SegmentioCell {
         // main constraints
         
         let segmentImageViewVerticalConstraint = NSLayoutConstraint.constraints(
-            withVisualFormat: "V:[imageContainerView(labelHeight)]",
+            withVisualFormat: "V:[imageContainerView(labelHeight@999)]",
             options: [.alignAllCenterY],
             metrics: metrics,
             views: views)
