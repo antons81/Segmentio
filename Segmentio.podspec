@@ -18,4 +18,5 @@ Pod::Spec.new do |spec|
   spec.resource_bundle = { 'Segmentio' => 'Segmentio/Source/Badge/Views/*.xib' }
   spec.module_name  = 'Segmentio'
   spec.requires_arc = true
+  
 end
