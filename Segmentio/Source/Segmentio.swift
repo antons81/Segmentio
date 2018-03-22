@@ -37,10 +37,11 @@ open class Segmentio: UIView {
     open var valueDidChange: SegmentioSelectionCallback?
     open var selectedSegmentioIndex = -1 {
         didSet {
-            if selectedSegmentioIndex != oldValue {
+            // enable multiple tap on the same segment
+            //if selectedSegmentioIndex != oldValue { 
                 reloadSegmentio()
                 valueDidChange?(self, selectedSegmentioIndex)
-            }
+            //}
         }
     }
 
